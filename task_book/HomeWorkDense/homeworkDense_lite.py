@@ -55,4 +55,4 @@ print('Размер массива x_train', x_train.shape)
 print('Размер массива y_train', y_train.shape)
 
 
-#first task is to create neural network with 10 50
+#first task is to create neural network with 10 50 and 100 neurals
