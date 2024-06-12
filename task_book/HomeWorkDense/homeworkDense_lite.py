@@ -53,6 +53,17 @@ y_train = np.array(y_train)
 # Вывод размерностей
 print('Размер массива x_train', x_train.shape)
 print('Размер массива y_train', y_train.shape)
+model = Sequential()
+model.add(Flatten(input_shape=(img_height, img_width, 1)))
+model.add(Dense(5000, activation='linear')) # Consider using ReLU for hidden layers
+model.add(Dense(100,activation='linear',batch_size=100))
+model.add(Dense(10, activation='softmax',batch_size=10))
+
+model.compile(optimizer=Adam(), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+
+
+history = model.fit(x_train, y_train, epochs=10, batch_size=32, validation_split=0.2)
 
 
 #first task is to create neural network with 10 50 and 100 neurals
